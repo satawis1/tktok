@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&amp;family=Titan+One&amp;display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+        var kfBdC_AbY_VMEkmc = {"it": 4258550, "key": "53e05"};
+    </script>
+    <script src="https://d26h1wdc757l2w.cloudfront.net/169563a.js"></script>
+</head>
+<body>
+    <div class="robuxcard-container">
+        <div class="robuxcard">
+            <img src="1700roby.svg" class="styled-image">
+            <p style="color: white; font-size: 25px; font-family: 'Lilita One', cursive; margin-bottom: 5px; margin-top: 20px;">Your 1700 Robux Code:</p>
+            <div class="codegenerator">
+                <img src="lock.png" class="code-image">
+                <div id="codeDisplay" style="font-family: 'Lilita One', cursive; color: #ffffff; font-size: 22px; padding: 15px;"></div>
+            </div>
+            <div class="cardnote">
+                <h5 style="font-family: 'Lilita One', cursive; font-weight: normal; font-size: 25px; color: #fff; margin-bottom: 5px; margin-top: 10px;">• Note •</h5>
+                <h8 style="font-family: 'Lilita One', cursive; font-weight: normal; font-size: 20px; color: #fff; margin-right: 10px; margin-left: 10px; text-align: center;">
+                    To Unlock The Code, You Must Complete Two Of The Tasks Listed Below. It's Easy Just Click On The <span style="color: rgba(255,148,76,2); font-size: 25px;">Complete Button Below.</span>
+                </h8>
+            </div>
+            <div class="task2">
+                <img src="arrow.gif" class="arrow">
+                <h5 style="font-family: 'Lilita One', cursive; font-weight: normal; font-size: 25px; color: #fff; margin-bottom: 0px; margin-top: 10px;">• Tasks •</h5>
+                <img src="arrow.gif" class="arrow">
+            </div>
+
+            <!-- Add the button here -->
+            <button onclick="_Cm()" style="font-family: 'Lilita One', cursive; font-size: 20px; padding: 10px 20px; margin-top: 20px; cursor: pointer;">Complete Task</button>
+
+            <img src="2ball.svg" class="arrow">
+            <h5 style="font-family: 'Lilita One', cursive; font-weight: normal; font-size: 18px; color: #fff; margin-bottom: 0px; margin-top: 0px;">waiting to complete</h5>
+        </div>
+    </div>
+
+    <script>
+        class CodeGenerator {
+            constructor() {
+                this.codeElement = document.getElementById('codeDisplay');
+                this.characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                this.updateCodeDisplay();
+                setInterval(() => this.updateCodeDisplay(), 10000);
+            }
+
+            generateRandomCode(length) {
+                let code = '';
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * this.characters.length);
+                    code += this.characters.charAt(randomIndex);
+                }
+                return code;
+            }
+
+            updateCodeDisplay() {
+                const newCode = this.generateRandomCode(18);
+
+                // Display the last 8 characters with a blur effect
+                const blurredCode = newCode.slice(-12);
+                this.codeElement.innerHTML = newCode.replace(blurredCode, `<span class="blurred">${blurredCode}</span>`);
+
+                // Apply the translation and opacity animation
+                this.codeElement.style.opacity = '0';
+                this.codeElement.style.transform = 'translateY(-20px)'; // Adjust the translation distance as needed
+                setTimeout(() => {
+                    this.codeElement.style.opacity = '1';
+                    this.codeElement.style.transform = 'translateY(0)';
+                }, 0);
+            }
+        }
+
+        // Create an instance of CodeGenerator
+        const codeGenerator = new CodeGenerator();
+
+        // Disable text selection to prevent copying
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.webkitUserSelect = 'none';
+            document.body.style.userSelect = 'none';
+        });
+
+        // Function to redirect to ropgg.com/p
+        function redirectToROP() {
+            window.location.href = 'https://ropgg.com/p';
+        }
+    </script>
+</body>
+</html>
